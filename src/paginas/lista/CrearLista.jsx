@@ -29,9 +29,12 @@ const CrearLista = () => {
     setEnviando(true);
 
     try {
-      const { data } = await axios.post("http://localhost:4000/api/listas", {
-        variantes,
-      });
+      const { data } = await axios.post(
+        "https://taskbolt-backend.onrender.com/api/listas",
+        {
+          variantes,
+        }
+      );
 
       toast.success(`Lista #${data.numero} creada`);
       setVariantes([{ nombre: "", cantidad: 1 }]); // Reiniciar formulario

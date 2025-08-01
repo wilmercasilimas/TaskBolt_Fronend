@@ -18,9 +18,9 @@ const FormularioVariante = ({ listaId }) => {
         { nombre: data.nombre, cantidad: Number(data.cantidad) },
       ];
       await axios.post(
-        `http://localhost:4000/api/variantes/${listaId}/multiples`,
-  { variantes: nuevaVariante }
-);
+        `https://taskbolt-backend.onrender.com/api/variantes/${listaId}/multiples`,
+        { variantes: nuevaVariante }
+      );
 
       toast.success("Producto agregado correctamente");
       reset();

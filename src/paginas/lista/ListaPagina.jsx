@@ -16,8 +16,8 @@ const ListaPagina = () => {
   const obtenerListas = async (numero = null) => {
     try {
       const url = numero
-        ? `http://localhost:4000/api/variantes?numero=${numero}`
-        : "http://localhost:4000/api/variantes";
+        ? `https://taskbolt-backend.onrender.com/api/variantes?numero=${numero}`
+        : "https://taskbolt-backend.onrender.com/api/variantes";
 
       const { data } = await axios.get(url);
       setListas(data.listas);

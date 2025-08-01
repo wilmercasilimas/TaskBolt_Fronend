@@ -22,7 +22,7 @@ const EliminarListaPorNumero = () => {
 
     try {
       const { data } = await axios.delete(
-        `http://localhost:4000/api/listas/numero/${valor}`
+        `https://taskbolt-backend.onrender.com/api/listas/numero/${valor}`
       );
       toast.success(data.message);
       setNumero("");
