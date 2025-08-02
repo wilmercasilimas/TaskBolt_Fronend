@@ -47,6 +47,7 @@ const EliminarListaPorNumero = ({ onRestaurarListas }) => {
 
   const limpiar = () => {
     setNumero("");
+    setVisible(false);
     onRestaurarListas();
   };
 
@@ -54,16 +55,14 @@ const EliminarListaPorNumero = ({ onRestaurarListas }) => {
     <div className="relative">
       <button
         onClick={handleTrashClick}
-       className=" w-10 h-10 flex items-center justify-center rounded bg-white border border-red-600 text-red-600 hover:bg-red-50"
-
+        className=" w-10 h-10 flex items-center justify-center rounded bg-white border border-red-600 text-red-600 hover:bg-red-50"
         title="Eliminar lista por número"
       >
         <TrashIcon className="w-5 h-5" />
       </button>
 
       {visible && (
-       <div className="absolute top-full mt-1.5 left-1/2 -translate-x-1/2 z-10 flex items-center bg-white border border-gray-300 rounded px-2 py-1 shadow-sm">
-
+        <div className="absolute top-full mt-1.5 left-1/2 -translate-x-1/2 z-10 flex items-center bg-white border border-gray-300 rounded px-2 py-1 shadow-sm">
           <input
             type="text"
             value={numero}
