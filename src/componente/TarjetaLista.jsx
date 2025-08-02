@@ -82,7 +82,8 @@ const TarjetaLista = ({ lista }) => {
                 </div>
 
                 {variante.estado && (
-                  <div className="flex flex-col gap-2">
+                  <div className="flex flex-col gap-2 items-end sm:items-start">
+
                     <BotonAccion
                       texto="Editar"
                       Icono={Edit3}
