@@ -10,7 +10,7 @@ const CerrarSesion = () => {
     navigate("/");
   };
 
-  return <Boton texto="Cerrar sesión" onClick={cerrarSesion} soloIcono={false} />;
+  return <Boton texto="Cerrar" onClick={cerrarSesion} soloIcono={false} />;
 };
 
 export default CerrarSesion;
