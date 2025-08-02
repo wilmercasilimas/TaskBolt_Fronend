@@ -60,7 +60,7 @@ const FiltroNumeroLista = ({ onFiltrar }) => {
                 onClick={limpiarFiltro}
                 className="absolute right-0 top-1/2 transform -translate-y-1/2 text-red-500 hover:text-red-700 px-1"
               >
-                <X size={14} />
+                <X size={20} />
               </button>
             )}
           </div>
@@ -68,10 +68,10 @@ const FiltroNumeroLista = ({ onFiltrar }) => {
 
         <button
           onClick={manejarClickLupa}
-          className="p-2 bg-blue-600 hover:bg-blue-700 rounded text-white"
+          className="w-10 h-10 flex items-center justify-center rounded bg-blue-600 text-white hover:bg-blue-700"
           title="Buscar lista por número"
         >
-          <Search size={15} />
+          <Search size={14} />
         </button>
       </div>
     </div>
