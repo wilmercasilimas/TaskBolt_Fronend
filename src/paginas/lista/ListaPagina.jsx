@@ -6,7 +6,7 @@ import CerrarSesion from "../../componente/CerrarSesion";
 import CrearLista from "./CrearLista";
 import { ClipboardPlus, XCircle } from "lucide-react";
 import FiltroNumeroLista from "../../componente/FiltroNumeroLista";
-import EliminarListaPorNumero from "@/componente/EliminarListaPorNumero";
+import EliminarListaPorNumero from "../../componente/EliminarListaPorNumero";
 
 
 
