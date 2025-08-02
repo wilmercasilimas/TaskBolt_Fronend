@@ -8,9 +8,6 @@ import { ClipboardPlus, XCircle } from "lucide-react";
 import FiltroNumeroLista from "../../componente/FiltroNumeroLista";
 import EliminarListaPorNumero from "../../componente/EliminarListaPorNumero";
 
-
-
-
 const ListaPagina = () => {
   const [listas, setListas] = useState([]);
   const [cargando, setCargando] = useState(true);
@@ -114,11 +111,7 @@ const ListaPagina = () => {
       {/* ➕🔍🗑️ Controles superiores */}
       <div className="flex items-center gap-4 mb-6">
         <EliminarListaPorNumero onRestaurarListas={() => obtenerListas()} />
-
-
-        {/* Filtro y eliminar */}
         <FiltroNumeroLista onFiltrar={handleFiltrarPorNumero} iconSize={24} />
-        {/* Crear lista */}
         <button
           onClick={() => setMostrarFormulario(!mostrarFormulario)}
           className="p-2 rounded bg-white border border-blue-600 text-blue-600 hover:bg-blue-50"
