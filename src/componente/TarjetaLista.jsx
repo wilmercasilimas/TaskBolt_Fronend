@@ -5,7 +5,6 @@ import FormularioVariante from "./FormularioVariante";
 import {
   eliminarVariante,
   completarVariante,
-  
 } from "../services/variantesService";
 import { toast } from "react-hot-toast";
 
@@ -47,7 +46,9 @@ const TarjetaLista = ({ lista }) => {
     <div className="bg-white shadow-md rounded-lg p-4 mb-6 w-full max-w-xl mx-auto">
       {/* 🆕 Encabezado con botón en esquina superior derecha */}
       <div className="flex justify-between items-start mb-3">
-        <h2 className="text-xl font-bold text-blue-700">Lista #{lista.numero}</h2>
+        <h2 className="text-xl font-bold text-blue-700">
+          Lista #{lista.numero}
+        </h2>
         <button
           onClick={() => setMostrarFormulario(!mostrarFormulario)}
           className="flex items-center gap-1 bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded text-sm transition"
@@ -75,14 +76,16 @@ const TarjetaLista = ({ lista }) => {
                   : "bg-gray-50"
               }`}
             >
-              <div className="flex justify-between items-center">
-                <div>
+              <div className="flex items-start gap-4">
+                <div className="flex-1">
                   <span className="block font-medium">{variante.nombre}</span>
-                  <span className="block text-sm">Cantidad: {variante.cantidad}</span>
+                  <span className="block text-sm">
+                    Cantidad: {variante.cantidad}
+                  </span>
                 </div>
 
                 {variante.estado && (
-                  <div className="flex flex-col gap-2">
+                  <div className="flex flex-col items-end gap-2 min-w-[100px]">
                     <BotonAccion
                       texto="Editar"
                       Icono={Edit3}

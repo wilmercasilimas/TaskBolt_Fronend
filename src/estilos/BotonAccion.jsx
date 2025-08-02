@@ -1,4 +1,4 @@
-// src/estilos/BotonAccion.jsximport React from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
 const BotonAccion = ({ texto, Icono, onClick, color = "blue" }) => {
@@ -12,10 +12,14 @@ const BotonAccion = ({ texto, Icono, onClick, color = "blue" }) => {
   return (
     <button
       onClick={onClick}
-      className={`w-full flex flex-col items-center gap-1 ${colores[color]} text-white px-3 py-2 rounded transition text-sm`}
+      title={texto}
+      aria-label={texto}
+      className={`group flex sm:flex-col items-center justify-center sm:justify-start gap-1 sm:gap-1 ${colores[color]} text-white px-3 py-2 rounded-lg shadow-md hover:shadow-lg transition-all duration-200 ease-in-out transform hover:scale-[1.03] active:scale-[0.97] w-full`}
     >
       <Icono className="w-5 h-5" />
-      <span>{texto}</span>
+      <span className="hidden sm:inline text-xs font-medium group-hover:underline">
+        {texto}
+      </span>
     </button>
   );
 };
