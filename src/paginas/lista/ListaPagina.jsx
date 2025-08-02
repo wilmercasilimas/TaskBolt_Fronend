@@ -6,7 +6,7 @@ import CerrarSesion from "../../componente/CerrarSesion";
 import CrearLista from "./CrearLista";
 import { ClipboardPlus, XCircle } from "lucide-react";
 import FiltroNumeroLista from "../../componente/FiltroNumeroLista";
-import EliminarListaNavegador from "@/componente/EliminarListaPorNumero";
+import EliminarListaPorNumero from "@/componente/EliminarListaPorNumero";
 
 
 
@@ -113,7 +113,7 @@ const ListaPagina = () => {
 
       {/* ➕🔍🗑️ Controles superiores */}
       <div className="flex items-center gap-4 mb-6">
-        <EliminarListaNavegador onRestaurarListas={() => obtenerListas()} />
+        <EliminarListaPorNumero onRestaurarListas={() => obtenerListas()} />
 
 
         {/* Filtro y eliminar */}
