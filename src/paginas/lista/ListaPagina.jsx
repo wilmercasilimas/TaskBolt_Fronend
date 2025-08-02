@@ -105,7 +105,7 @@ const ListaPagina = () => {
 
   return (
     <div className="p-6 relative">
-      {/* Botón cerrar sesión */}
+      {/* Botón cerrar */}
       <div className="absolute top-4 right-4">
         <CerrarSesion />
       </div>
