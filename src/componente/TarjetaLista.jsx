@@ -82,7 +82,7 @@ const TarjetaLista = ({ lista }) => {
                 </div>
 
                 {variante.estado && (
-                  <div className="flex gap-2 flex-wrap">
+                  <div className="flex flex-col gap-2">
                     <BotonAccion
                       texto="Editar"
                       Icono={Edit3}
