@@ -74,7 +74,7 @@ const EliminarListaPorNumero = ({ onRestaurarListas }) => {
           {numero && (
             <button
               onClick={limpiar}
-              className="ml-1 text-gray-500 hover:text-gray-800"
+              className="ml-1 text-red-600 hover:text-gray-800"
               title="Limpiar"
             >
               <XMarkIcon className="w-4 h-4" />
