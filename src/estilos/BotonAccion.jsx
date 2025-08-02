@@ -6,16 +6,16 @@ const BotonAccion = ({ texto, Icono, onClick, color = "blue" }) => {
     blue: "bg-blue-600 hover:bg-blue-700",
     red: "bg-red-600 hover:bg-red-700",
     green: "bg-green-600 hover:bg-green-700",
-    gray: "bg-gray-500 hover:bg-gray-600"
+    gray: "bg-gray-500 hover:bg-gray-600",
   };
 
   return (
     <button
       onClick={onClick}
-      className={`flex items-center gap-2 ${colores[color]} text-white px-3 py-2 rounded transition`}
+      className={`w-full flex flex-col items-center gap-1 ${colores[color]} text-white px-3 py-2 rounded transition text-sm`}
     >
       <Icono className="w-5 h-5" />
-      <span className="hidden md:inline">{texto}</span>
+      <span>{texto}</span>
     </button>
   );
 };
@@ -28,4 +28,3 @@ BotonAccion.propTypes = {
 };
 
 export default BotonAccion;
-
