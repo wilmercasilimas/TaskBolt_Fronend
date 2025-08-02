@@ -27,11 +27,12 @@ const EliminarListaPorNumero = ({ onRestaurarListas }) => {
       await eliminarListaPorNumero(numero);
       toast.success(`Lista ${numero} eliminada`);
 
-      // ✅ Emitimos evento por socket
+      // Emitir por socket
       socket.emit("listaEliminada", { numero });
 
+      // 🧼 Limpiar y ocultar
       setNumero("");
-      setVisible(false);
+      setVisible(false); // ✅ esto oculta el buscador
       onRestaurarListas();
     } catch (error) {
       const msg = error?.response?.data?.message || "Error al eliminar";
