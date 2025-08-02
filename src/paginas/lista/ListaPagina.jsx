@@ -102,30 +102,35 @@ const ListaPagina = () => {
   }, []);
 
   return (
-    <div className="p-6 relative">
+    <div className=" relative">
       {/* Botón cerrar */}
-      <div className="absolute top-4 right-4">
+      <div className="absolute top-2 right-4">
         <CerrarSesion />
       </div>
 
       {/* ➕🔍🗑️ Controles superiores */}
-      <div className="flex items-center justify-around mb-6">
-        <EliminarListaPorNumero onRestaurarListas={() => obtenerListas()} />
-
+      <div className="flex items-center justify-around mb-1">
+        <div className="mt-12">
+          <EliminarListaPorNumero onRestaurarListas={() => obtenerListas()} />
+        </div>
         {/* Filtro y eliminar */}
-        <FiltroNumeroLista onFiltrar={handleFiltrarPorNumero} iconSize={50} />
+        <div className="mt-12">
+          <FiltroNumeroLista onFiltrar={handleFiltrarPorNumero} iconSize={50} />
+        </div>
         {/* Crear lista */}
-        <button
-          onClick={() => setMostrarFormulario(!mostrarFormulario)}
-          className="p-2 rounded bg-white border border-blue-600 text-blue-600 hover:bg-blue-50"
-          title={mostrarFormulario ? "Cerrar formulario" : "Nueva lista"}
-        >
-          {mostrarFormulario ? (
-            <XCircle size={24} />
-          ) : (
-            <ClipboardPlus size={24} />
-          )}
-        </button>
+        <div className="mt-12">
+          <button
+            onClick={() => setMostrarFormulario(!mostrarFormulario)}
+            className="p-2 rounded bg-white border border-blue-600 text-blue-600 hover:bg-blue-50"
+            title={mostrarFormulario ? "Cerrar formulario" : "Nueva lista"}
+          >
+            {mostrarFormulario ? (
+              <XCircle size={24} />
+            ) : (
+              <ClipboardPlus size={24} />
+            )}
+          </button>
+        </div>
       </div>
 
       {/* Mostrar formulario solo si el estado lo permite */}

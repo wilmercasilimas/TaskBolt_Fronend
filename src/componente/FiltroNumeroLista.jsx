@@ -58,7 +58,7 @@ const FiltroNumeroLista = ({ onFiltrar }) => {
             {numero && (
               <button
                 onClick={limpiarFiltro}
-                className="absolute right-0 top-1/2 transform -translate-y-1/2 text-red-500 hover:text-red-700 px-1"
+                className="my-20 absolute right-0 top-1/2 transform -translate-y-1/2 text-red-500 hover:text-red-700 px-1"
               >
                 <X size={20} />
               </button>
