@@ -41,41 +41,41 @@ const FiltroNumeroLista = ({ onFiltrar }) => {
     }
   };
 
-  return (
-    <div className="mt-2 ml-2">
-      <div className="flex items-center gap-2">
-        {mostrarInput && (
-          <div className="relative">
-            <input
-              type="text"
-              maxLength={3}
-              value={numero}
-              onChange={(e) => setNumero(e.target.value)}
-              onKeyDown={manejarEnter}
-              placeholder="N°"
-              className="w-16 text-center border border-gray-300 rounded px-2 py-1 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
-            />
-            {numero && (
-              <button
-                onClick={limpiarFiltro}
-                className="my-20 absolute right-0 top-1/2 transform -translate-y-1/2 text-red-500 hover:text-red-700 px-1"
-              >
-                <X size={20} />
-              </button>
-            )}
-          </div>
-        )}
+ return (
+  <div className="relative mt-2 ml-2">
+    <button
+      onClick={manejarClickLupa}
+      className="w-10 h-10 flex items-center justify-center rounded bg-blue-600 text-white hover:bg-blue-700"
+      title="Buscar lista por número"
+    >
+      <Search size={14} />
+    </button>
 
-        <button
-          onClick={manejarClickLupa}
-          className="w-10 h-10 flex items-center justify-center rounded bg-blue-600 text-white hover:bg-blue-700"
-          title="Buscar lista por número"
-        >
-          <Search size={14} />
-        </button>
+    {mostrarInput && (
+      <div className="absolute top-full mt-1 left-1/2 -translate-x-1/2 z-10 flex items-center bg-white border border-gray-300 rounded px-2 py-1 shadow-sm">
+        <input
+          type="text"
+          maxLength={3}
+          value={numero}
+          onChange={(e) => setNumero(e.target.value)}
+          onKeyDown={manejarEnter}
+          placeholder="N°"
+          className="w-16 text-center outline-none text-sm"
+        />
+        {numero && (
+          <button
+            onClick={limpiarFiltro}
+            className="ml-1 text-red-500 hover:text-red-700"
+            title="Limpiar"
+          >
+            <X size={16} />
+          </button>
+        )}
       </div>
-    </div>
-  );
+    )}
+  </div>
+);
+
 };
 
 FiltroNumeroLista.propTypes = {

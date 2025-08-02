@@ -62,7 +62,8 @@ const EliminarListaPorNumero = ({ onRestaurarListas }) => {
       </button>
 
       {visible && (
-        <div className="absolute left-full ml-2 top-1/2 -translate-y-1/2 z-10 flex items-center bg-white border border-gray-300 rounded px-2 py-1 shadow-sm">
+       <div className="absolute top-full mt-1.5 left-1/2 -translate-x-1/2 z-10 flex items-center bg-white border border-gray-300 rounded px-2 py-1 shadow-sm">
+
           <input
             type="text"
             value={numero}

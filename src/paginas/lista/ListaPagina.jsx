@@ -109,7 +109,7 @@ const ListaPagina = () => {
       </div>
 
       {/* ➕🔍🗑️ Controles superiores */}
-      <div className="flex items-center justify-around mb-1">
+      <div className="flex items-center justify-around mb-10">
         <div className="mt-12">
           <EliminarListaPorNumero onRestaurarListas={() => obtenerListas()} />
         </div>
