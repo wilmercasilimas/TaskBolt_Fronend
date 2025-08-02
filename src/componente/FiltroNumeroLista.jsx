@@ -68,7 +68,7 @@ const FiltroNumeroLista = ({ onFiltrar }) => {
 
         <button
           onClick={manejarClickLupa}
-          className="p-2 bg-blue-600 hover:bg-blue-700 rounded text-white"
+          className="w-full h-full flex items-center justify-center bg-blue-600 hover:bg-blue-700 rounded text-white"
           title="Buscar lista por número"
         >
           <Search size={15} />

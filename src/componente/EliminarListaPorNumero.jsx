@@ -54,7 +54,7 @@ const EliminarListaPorNumero = ({ onRestaurarListas }) => {
     <div className="relative">
       <button
         onClick={handleTrashClick}
-        className="p-2 rounded bg-white border border-red-600 text-red-600 hover:bg-red-50"
+        className="w-full h-full flex items-center justify-center rounded bg-white border border-red-600 text-red-600 hover:bg-red-50"
         title="Eliminar lista por número"
       >
         <TrashIcon className="w-5 h-5" />

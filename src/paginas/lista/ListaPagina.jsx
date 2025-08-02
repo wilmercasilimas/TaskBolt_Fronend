@@ -109,20 +109,31 @@ const ListaPagina = () => {
       </div>
 
       {/* ➕🔍🗑️ Controles superiores */}
-      <div className="flex items-center gap-4 mb-6">
-        <EliminarListaPorNumero onRestaurarListas={() => obtenerListas()} />
-        <FiltroNumeroLista onFiltrar={handleFiltrarPorNumero} iconSize={24} />
-        <button
-          onClick={() => setMostrarFormulario(!mostrarFormulario)}
-          className="p-2 rounded bg-white border border-blue-600 text-blue-600 hover:bg-blue-50"
-          title={mostrarFormulario ? "Cerrar formulario" : "Nueva lista"}
-        >
-          {mostrarFormulario ? (
-            <XCircle size={24} />
-          ) : (
-            <ClipboardPlus size={24} />
-          )}
-        </button>
+      <div className="flex items-center gap-3 mb-6">
+        {/* 🗑️ Botón eliminar */}
+        <div className="w-10 h-10">
+          <EliminarListaPorNumero onRestaurarListas={() => obtenerListas()} />
+        </div>
+
+        {/* 🔍 Botón filtro */}
+        <div className="w-10 h-10">
+          <FiltroNumeroLista onFiltrar={handleFiltrarPorNumero} iconSize={24} />
+        </div>
+
+        {/* ➕ Botón crear */}
+        <div className="w-10 h-10">
+          <button
+            onClick={() => setMostrarFormulario(!mostrarFormulario)}
+            className="w-full h-full flex items-center justify-center rounded bg-white border border-blue-600 text-blue-600 hover:bg-blue-50"
+            title={mostrarFormulario ? "Cerrar formulario" : "Nueva lista"}
+          >
+            {mostrarFormulario ? (
+              <XCircle size={20} />
+            ) : (
+              <ClipboardPlus size={20} />
+            )}
+          </button>
+        </div>
       </div>
 
       {/* Mostrar formulario solo si el estado lo permite */}
