@@ -5,7 +5,7 @@ import FormularioVariante from "./FormularioVariante";
 import {
   eliminarVariante,
   completarVariante,
-  editarVariante
+  
 } from "../services/variantesService";
 import { toast } from "react-hot-toast";
 

@@ -1,4 +1,4 @@
-// src/estilos/BotonAccion.jsx
+// src/estilos/BotonAccion.jsximport React from "react";
 import PropTypes from "prop-types";
 
 const BotonAccion = ({ texto, Icono, onClick, color = "blue" }) => {

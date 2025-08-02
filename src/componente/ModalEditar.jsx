@@ -1,6 +1,6 @@
 // src/componente/ModalEditar.jsx
 import { Dialog, Transition } from "@headlessui/react";
-import { Fragment } from "react";
+import { Fragment, useEffect } from "react";
 import PropTypes from "prop-types";
 import { useForm } from "react-hook-form";
 import { editarVariante } from "../services/variantesService";
@@ -8,16 +8,27 @@ import { toast } from "react-hot-toast";
 
 const ModalEditar = ({ isOpen, onClose, variante, listaId }) => {
   const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors }
-  } = useForm({
-    defaultValues: {
-      nombre: variante?.nombre || "",
-      cantidad: variante?.cantidad || 1
-    }
-  });
+  register,
+  handleSubmit,
+  reset,
+  formState: { errors }
+} = useForm({
+  defaultValues: {
+    nombre: variante?.nombre || "",
+    cantidad: variante?.cantidad || 1
+  }
+});
+
+useEffect(() => {
+  if (isOpen && variante) {
+    reset({
+      nombre: variante.nombre || "",
+      cantidad: variante.cantidad || 1
+    });
+  }
+}, [isOpen, variante, reset]);
+
+
 
   const onSubmit = async (data) => {
     try {

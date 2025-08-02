@@ -1,5 +1,5 @@
 # Logs
-logs
+logs/
 *.log
 npm-debug.log*
 yarn-debug.log*
@@ -7,21 +7,37 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
+# Node
+node_modules/
 
-# Editor directories and files
-.vscode/*
+# Build outputs
+dist/
+dist-ssr/
+build/
+
+# Local environment
+*.local
+.env
+.env.*.local
+.md
+
+# IDE/editor settings
+.vscode/
 !.vscode/extensions.json
-.idea
+.idea/
 .DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
-.env
-.bat
-.md
+
+# Sistema y otros
+.eslintcache
+
+# ⚠️ Archivos innecesarios que estás ignorando (ver más abajo)
+# No ignores estos si los querés seguir usando:
+# .bat → no ignores si usás scripts manuales
+# .md  → no ignores si querés mantener README, INSTALL.md, etc.
+# .eslintrc → no ignores si configurás ESLint por archivo
+
