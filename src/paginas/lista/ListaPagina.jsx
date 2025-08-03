@@ -40,6 +40,10 @@ const ListaPagina = () => {
       setListas((prev) => [...prev, nuevaLista]);
     });
 
+    socket.on("listaEliminada", ({ id }) => {
+    setListas((prev) => prev.filter((lista) => lista._id !== id));
+  });
+
     socket.on("variantesAgregadas", ({ listaId, variantes }) => {
       setListas((prev) =>
         prev.map((lista) =>
@@ -94,6 +98,7 @@ const ListaPagina = () => {
 
     return () => {
       socket.off("listaCreada");
+      socket.off("listaEliminada");
       socket.off("variantesAgregadas");
       socket.off("varianteEditada");
       socket.off("varianteEliminada");

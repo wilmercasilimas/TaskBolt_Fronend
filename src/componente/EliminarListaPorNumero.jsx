@@ -67,10 +67,12 @@ const EliminarListaPorNumero = ({ onRestaurarListas }) => {
             type="text"
             value={numero}
             onChange={handleChange}
+            onKeyDown={(e) => e.key === "Enter" && handleTrashClick()}
             placeholder="N°"
             maxLength={3}
             className="w-16 text-sm outline-none text-center"
           />
+
           {numero && (
             <button
               onClick={limpiar}
