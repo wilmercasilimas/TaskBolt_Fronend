@@ -20,6 +20,11 @@ const TarjetaLista = ({ lista }) => {
   const [mostrarFormulario, setMostrarFormulario] = useState(false);
 
   const handleEliminar = async (variante) => {
+    const confirmado = window.confirm(
+      "¿Seguro que deseas eliminar este producto?"
+    );
+    if (!confirmado) return;
+
     try {
       await eliminarVariante(lista._id, variante._id);
       toast.success("Producto eliminado");
@@ -42,6 +47,10 @@ const TarjetaLista = ({ lista }) => {
     setModalAbierto(true);
   };
 
+  const listaCompletada =
+  lista.variantes.length > 0 && lista.variantes.every((v) => !v.estado);
+
+
   return (
     <div className="bg-white shadow-md rounded-lg p-4 mb-6 w-full max-w-xl mx-auto">
       {/* 🆕 Encabezado con botón en esquina superior derecha */}
@@ -49,15 +58,23 @@ const TarjetaLista = ({ lista }) => {
         <h2 className="text-xl font-bold text-blue-700">
           Lista #{lista.numero}
         </h2>
-        <button
-          onClick={() => setMostrarFormulario(!mostrarFormulario)}
-          className="flex items-center gap-1 bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded text-sm transition"
-        >
-          <PlusCircle className="w-4 h-4" />
-          <span className="hidden sm:inline">
-            {mostrarFormulario ? "Ocultar" : "Agregar"}
-          </span>
-        </button>
+        {listaCompletada ? (
+  <div className="flex items-center gap-2 text-green-700 bg-green-100 px-3 py-1 rounded text-sm font-medium">
+    <CheckCircle className="w-4 h-4" />
+    Lista completada
+  </div>
+) : (
+  <button
+    onClick={() => setMostrarFormulario(!mostrarFormulario)}
+    className="flex items-center gap-1 bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded text-sm transition"
+  >
+    <PlusCircle className="w-4 h-4" />
+    <span className="hidden sm:inline">
+      {mostrarFormulario ? "Ocultar" : "Agregar"}
+    </span>
+  </button>
+)}
+
       </div>
 
       {/* 🆕 Formulario condicional */}
